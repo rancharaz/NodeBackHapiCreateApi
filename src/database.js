@@ -3,6 +3,7 @@ import mysql from 'mysql'
  
 
 const connection = mysql.createConnection({
+    //database creds
     host: 'localhost',
     user: 'root',
     password: '',
@@ -10,6 +11,7 @@ const connection = mysql.createConnection({
 });
 
 export const db = {
+    //connection to database logic
     connect: () => connection.connect(),
     query: (queryString, escapedValues ) => 
     new Promise((resolve, reject) => {

@@ -1,11 +1,11 @@
- 
+ //this is where you select all data from db
 import { db } from "../database";
 
 
 export const getAllListingsRoute = {
-    //define fake database and get method
+    
     method: 'GET',
-    path: '/api/listings',
+    path: '/api/listings/',
     handler: async (req, h)=> {
         const {results} = await db.query(
             'SELECT * FROM listings'

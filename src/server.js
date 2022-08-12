@@ -23,6 +23,7 @@ process.on('unhandledRejection', err => {
     console.log(err);
     process.exit(1);
 })
+//stop database
 process.on('SIGINT', async () => {
     console.log('Stopping server...')
     await server.stop({ timeout: 10000});

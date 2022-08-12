@@ -1,3 +1,5 @@
-npm install first - not the latest version bare with install
+most of the files are well documented 
+npm install first - not the latest version bare this in mind
 npm run dev to run server
 http://localhost:8000/api/ to get into the link 
+if you see db.query inside the routes folder and it's files, this is where you put your sql queries..
