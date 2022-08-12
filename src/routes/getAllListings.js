@@ -1,5 +1,5 @@
 import { fakeListings } from "./fake-data";
-
+import { db } from "../database";
 export const getAllListingsRoute = {
     //define fake database and get method
     method: 'GET',
