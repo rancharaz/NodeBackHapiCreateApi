@@ -1,6 +1,5 @@
 //logic setting database connection
 import mysql from 'mysql'
-
  
 
 const connection = mysql.createConnection({
