@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec npx babel-node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@babel/node": "^7.18.10",
     "@babel/plugin-transform-runtime": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
-    "install": "^0.13.0"
+    "install": "^0.13.0",
+    "nodemon": "^2.0.19"
   }
 }
