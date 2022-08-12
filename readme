@@ -3,3 +3,13 @@ npm install first - not the latest version bare this in mind
 npm run dev to run server
 http://localhost:8000/api/ to get into the link 
 if you see db.query inside the routes folder and it's files, this is where you put your sql queries..
+
+
+
+create a database,
+name the database buy_and_sell
+with table listings
+
+INSERT INTO `listings`(`id`, `name`, `description`, `price`, `user_id`, `user_views`) 
+VALUES 
+('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
