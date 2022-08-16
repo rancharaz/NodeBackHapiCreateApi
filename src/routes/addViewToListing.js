@@ -1,22 +1,19 @@
-//here we add views to db with post
+import { db } from '../database';
 
-import { db } from "../database";
-
-export const addViewTolistingRoute = {
+export const addViewToListingRoute = {
     method: 'POST',
-    path: '/api/listing/{id}/add-view',
-    handler: async (req, h) => {
+    path: '/api/listings/{id}/add-view',
+    handler: async (req, h) => { 
         const id = req.params.id;
-
         await db.query(
-            'UPDATE listings SET views=views+1 WHERE id=?',
+            'UPDATE listings SET user_views=user_views+1 WHERE id=?',
             [id],
         );
-        const {results} = await db.query(
-            'SELECT * FROM LISTING WHERE id=?',
-            [id]
+        const { results } = await db.query(
+            'SELECT * FROM listings WHERE id=?',
+            [id],
         );
-        const updatedLinsting = results[0];
-        return updatedLinsting;
+        const updatedListing = results[0];
+        return updatedListing;
     }
 }

@@ -6,7 +6,7 @@ import { db } from '../database';
 export const getListingRoute = {
         //getting the data by id
         method: 'GET',
-        path: '/api/listings/{id}',
+        path: '/api/listings/{id}/',
         handler: async (req, h) => {
             const id = req.params.id;
             const {results}  = await db.query(
