@@ -11,6 +11,7 @@ const connection = mysql.createConnection({
 });
 
 export const db = {
+
     //connection to database logic
     connect: () => connection.connect(),
     query: (queryString, escapedValues ) => 
@@ -21,4 +22,5 @@ export const db = {
         })
     }),
     end: () => connection.end()
+
 }
