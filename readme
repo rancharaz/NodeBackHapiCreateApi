@@ -13,3 +13,8 @@ with table listings
 INSERT INTO `listings`(`id`, `name`, `description`, `price`, `user_id`, `user_views`) 
 VALUES 
 ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
+
+
+
+path in the routes folders and file's code were made for testing
+    path: '/api/listings/{id}/add-view/',

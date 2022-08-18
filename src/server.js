@@ -1,7 +1,13 @@
 import Hapi, { server } from '@hapi/hapi';
 import routes from './routes';
 import { db } from './database';
- 
+import * as admin from 'firebase-admin'
+import credentials from '../credentials.json'
+
+admin.initializeApp({
+    credential: admin.credential.cert(credentials)
+});
+
 
 const start = async() => {
     //creating server: host and port
@@ -23,7 +29,7 @@ process.on('unhandledRejection', err => {
     console.log(err);
     process.exit(1);
 })
-//stop database
+//stop server
 process.on('SIGINT', async () => {
     console.log('Stopping server...')
     await server.stop({ timeout: 10000});

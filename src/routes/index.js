@@ -1,8 +1,10 @@
 import { addViewToListingRoute } from "./addViewToListing";
 import { createNewListingRoute } from "./createNewListing";
- import { getAllListingsRoute } from "./getAllListings";
+import { deleteListingRoute } from "./deleteListing";
+import { getAllListingsRoute } from "./getAllListings";
 import { getListingRoute } from "./getListing";
 import { getUserListingsRoute } from "./getUserListings";
+import { updateListingRoute} from "./updateListing";
 
 export default [
     //inserting the variable[queries] to export to the server
@@ -10,5 +12,7 @@ export default [
     getListingRoute,
     addViewToListingRoute,
     getUserListingsRoute,
-     createNewListingRoute
+    createNewListingRoute,
+    updateListingRoute,
+    deleteListingRoute
 ]

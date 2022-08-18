@@ -8,6 +8,7 @@ export const getListingRoute = {
         method: 'GET',
         path: '/api/listings/{id}/',
         handler: async (req, h) => {
+            //getting the id inside the path
             const id = req.params.id;
             const {results}  = await db.query(
                 'SELECT * FROM listings WHERE id=?',

@@ -1,0 +1,28 @@
+import { db } from '../database';
+// this page is dedicated to edit 
+
+export const updateListingRoute = {
+    //update listing by id
+    method: 'POST',
+    path: '/api/listings/{id}/',
+    handler: async (req, h) => {
+        //getting the id form the link
+        const { id } = req.params;
+        //acquiring name, description, price from payload
+        const { name, description, price } = req.payload;
+
+        const userId = '12345';
+
+        await db.query(`
+            UPDATE listings
+                SET name=?, description=?, price=?
+                WHERE id=? AND user_id=?
+        `, [name, description, price, id, userId]);
+
+        const { results } = await db.query(
+            'SELECT * FROM listings WHERE id=? AND user_id=?',
+            [id, userId],
+        );
+        return results[0];
+    }
+}

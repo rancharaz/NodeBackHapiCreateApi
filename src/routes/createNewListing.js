@@ -6,9 +6,10 @@ import { db } from "../database";
 
 export const createNewListingRoute = {
     method: "POST",
-    path: '/api/listings',
+    path: '/api/listings/',
     handler: async(req, h) =>{
 
+        //initiate id using uuid for unique id
         const id = uuid();
 
         const {name = '', description='', price = '0'} = req.payload;
